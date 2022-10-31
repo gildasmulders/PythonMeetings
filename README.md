@@ -1,3 +1,5 @@
+---
+---
 This is the online "syllabus" for our exploration of Python.
 
 Here are the available links:
