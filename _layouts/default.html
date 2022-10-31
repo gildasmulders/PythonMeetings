@@ -13,21 +13,22 @@
   </head>
 
   <body class="container-fluid">
-    <div class="row sticky-top">
+    <div class="row">
         <div class="col w-100 p-2" style="background-color: black; text-align: center; color: white;">
-            <h1>{{ site.title | default: site.github.repository_name }}</h1>
-            <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+            <h1>{{ site.title | default: site.github.repository_name }}</h1>            
         </div>
     </div>
 
-    <div class="row" style="background-color: gray;">
+    <div class="row" style="background-color: black;">
         <div class="col-3">
             {% include nav.html %}
             <p><a href="https://github.com/gildasmulders/PythonMeetings">Repository</a></p>
             <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
         </div>
-        <div class="col">
-            {{ content }}
+        <div class="col d-flex flex-column h-100 m-2" style="background: white; color: black; overflow-y: hidden; box-shadow: 1px 1px 5px 0 gray;">
+            <div class="flex-grow-1" style="overflow-y: auto;">
+                {{ content }}
+            </div>            
         </div>
     </div>
   </body>
