@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: 'en-US' }}">
 
   <head>
     <meta charset='utf-8'>
@@ -14,17 +14,21 @@
 
   <body class="container-fluid">
     <div class="row h-100" style="background: lightgray;">
-        <aside class="col-2 h-100" style="background: black; text-align: center; color: white;">
-            <header>
+        <aside class="col-2 h-100 d-flex" style="background: black; text-align: center; color: white;">
+            <header style="word-break: break-word;">
                 <h1>{{ site.title | default: site.github.repository_name }}</h1>
             </header>
-            {% include nav.html %}
-            <footer>
+            <div class="my-auto">
+                {% include nav.html %}
+            </div>            
+                
+            <footer class="mt-auto">
                 <p><a href="https://github.com/gildasmulders/PythonMeetings">Github Repository</a></p>
                 <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
             </footer>
         </aside>
-        <div class="col h-100 m-2" style="background: white; color: black; box-shadow: 1px 1px 5px 0 gray;">
+
+        <div class="col h-100 m-2" style="background: white; color: black; box-shadow: 1px 1px 5px 0 gray; overflow-y: auto;">
             <div class="d-flex flex-column h-100 justify-content-center align-items-center">
                 {{ content }} 
             </div>                  
