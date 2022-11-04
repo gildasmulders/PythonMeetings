@@ -1,0 +1,243 @@
+id;name;category;type;functional_unit;wastage_coefficient
+1;AAC block - 600 × 200 × 100 mm;Concrete and Plaster Products;Concrete;no.;1.0
+2;AAC block - 600 × 200 × 150 mm;Concrete and Plaster Products;Concrete;no.;1.0
+3;AAC block - 600 × 200 × 200 mm;Concrete and Plaster Products;Concrete;no.;1.0
+4;Concrete block - 390 × 190 × 90 mm;Concrete and plaster products;Blocks;no.;1.0
+5;Concrete block - 390 × 190 × 140 mm;Concrete and plaster products;Blocks;no.;1.0
+6;Concrete block - 390 × 190 × 190 mm;Concrete and plaster products;Blocks;no.;1.0
+7;Fibre cement sheet - 4.5 mm;Concrete and plaster products;Fibre cement;m²;1.05
+8;Fibre cement sheet - 6 mm;Concrete and plaster products;Fibre cement;m²;1.05
+9;Fibre cement sheet - 7.5 mm;Concrete and plaster products;Fibre cement;m²;1.0
+10;Fibre cement sheet - 18 mm;Concrete and plaster products;Fibre cement;m²;1.0
+11;Fibre cement sheet - 24 mm;Concrete and plaster products;Fibre cement;m²;1.0
+12;FC weatherboard - 205 × 7.5 mm - per m² wall;Concrete and plaster products;Fibre cement;m²;1.0
+13;FC weatherboard - 230 × 7.5 mm - per m² wall;Concrete and plaster products;Fibre cement;m²;1.0
+14;FC weatherboard - 300 × 7.5 mm - per m² wall;Concrete and plaster products;Fibre cement;m²;1.0
+15;FC weatherboard - 150 × 16 mm - per m² wall;Concrete and plaster products;Fibre cement;m²;1.0
+16;FC weatherboard - 180 × 16 mm - per m² wall;Concrete and plaster products;Fibre cement;m²;1.0
+17;Flat glass sheet - 3 mm;Glass;Flat glass;m²;1.0
+18;Flat glass sheet - 4 mm;Glass;Flat glass;m²;1.03
+19;Flat glass sheet - 5 mm;Glass;Flat glass;m²;1.0
+20;Flat glass sheet - 6 mm;Glass;Flat glass;m²;1.0
+21;Flat glass sheet - 10 mm;Glass;Flat glass;m²;1.0
+22;Flat glass sheet - 12 mm;Glass;Flat glass;m²;1.0
+23;Laminated glass sheet - 6.38 mm;Glass;Laminated glass;m²;1.0
+24;Laminated glass sheet - 8.38 mm;Glass;Laminated glass;m²;1.0
+25;Laminated glass sheet - 10.38 mm;Glass;Laminated glass;m²;1.0
+26;Laminated glass sheet - 12.38 mm;Glass;Laminated glass;m²;1.0
+27;Toughened glass sheet - 3 mm;Glass;Toughened glass;m²;1.0
+28;Toughened glass sheet - 4 mm;Glass;Toughened glass;m²;1.0
+29;Toughened glass sheet - 5 mm;Glass;Toughened glass;m²;1.0
+30;Toughened glass sheet - 6 mm;Glass;Toughened glass;m²;1.03
+31;Toughened glass sheet - 10 mm;Glass;Toughened glass;m²;1.0
+32;Toughened glass sheet - 12 mm;Glass;Toughened glass;m²;1.03
+33;Cellulose insulation - 80 mm (R2);Insulation;Cellulose;m²;1.0
+34;Cellulose insulation - 100 mm (R2.5);Insulation;Cellulose;m²;1.0
+35;Glasswool insulation - 80 mm (R2);Insulation;Other;m²;1.0
+36;Glasswool insulation - 100 mm (R2.5);Insulation;Other;m²;1.0
+37;EPS/XPS insulation - 72 mm (R2);Insulation;Polystyrene;m²;1.1
+38;EPS/XPS insulation - 90 mm (R2.5);Insulation;Polystyrene;m²;1.0
+39;PU rigid foam insulation - 44 mm (R2);Insulation;Polyurethane;m²;1.0
+40;PU rigid foam insulation - 55 mm (R2.5);Insulation;Polyurethane;m²;1.0
+41;Rockwool insulation - 80 mm (R2);Insulation;Other;m²;1.0
+42;Rockwool insulation - 100 mm (R2.5);Insulation;Other;m²;1.0
+43;Aluminium bar flat - 12 mm × 3mm;Metals;Aluminium;m;1.0
+44;Aluminium bar flat - 40 mm × 3mm;Metals;Aluminium;m;1.0
+45;Aluminium bar flat - 100 mm × 6mm;Metals;Aluminium;m;1.0
+46;Aluminium bar round - 16 mm dia.;Metals;Aluminium;m;1.0
+47;Aluminium bar round - 50 mm dia.;Metals;Aluminium;m;1.0
+48;Aluminium bar round - 150 mm dia.;Metals;Aluminium;m;1.0
+49;Aluminium round tube - 25 mm dia.. 3.2 mm thick;Metals;Aluminium;m;1.0
+50;Aluminium round tube - 60 mm dia.. 10 mm thick;Metals;Aluminium;m;1.0
+51;Aluminium round tube - 80 mm dia.. 6 mm thick;Metals;Aluminium;m;1.0
+52;Aluminium square tube - 20 × 20 mm. 1.6 mm thick;Metals;Aluminium;m;1.0
+53;Aluminium square tube - 40 × 40 mm. 2 mm thick;Metals;Aluminium;m;1.0
+54;Aluminium square tube - 100 × 100 mm. 3 mm thick;Metals;Aluminium;m;1.0
+55;Aluminium sheet - 1.6 mm;Metals;Aluminium;m²;1.0
+56;Aluminium sheet - 3 mm;Metals;Aluminium;m²;1.0
+57;Aluminium sheet - 6 mm;Metals;Aluminium;m²;1.0
+58;Copper sheet - 0.9 mm;Metals;Copper;m²;1.0
+59;Copper sheet - 1.2 mm;Metals;Copper;m²;1.0
+60;Copper sheet - 2 mm;Metals;Copper;m²;1.0
+61;Copper sheet - 3 mm;Metals;Copper;m²;1.0
+62;Copper pipe - 12.7 mm outer dia.. 0.91 mm thick;Metals;Copper;m;1.0
+63;Copper pipe - 19.05 mm outer dia.. 1.02 mm thick;Metals;Copper;m;1.0
+64;Copper pipe - 40 mm outer dia.. 1.22 mm thick;Metals;Copper;m;1.0
+65;Steel reinforcement bar - 6 mm dia.;Metals;Steel;m;1.0
+66;Steel reinforcement bar - 8 mm dia.;Metals;Steel;m;1.0
+67;Steel reinforcement bar - 12 mm dia.;Metals;Steel;m;1.05
+68;Bare wire - 2 mm dia.;Metals;Stainless steel;m;1.0
+69;Bare wire - 3.2 mm dia.;Metals;Stainless steel;m;1.0
+70;Wire Rope - 1.6 mm dia.;Metals;Stainless steel;m;1.0
+71;Wire Rope - 4 mm dia.;Metals;Stainless steel;m;1.0
+72;Wire Rope - 8 mm dia.;Metals;Stainless steel;m;1.0
+73;Wire Rope - 12 mm dia.;Metals;Stainless steel;m;1.0
+74;Square tube - 20 × 20 mm. 1.6 mm thick;Metals;Steel;m;1.0
+75;Square tube - 50 × 50 mm. 2 mm thick;Metals;Steel;m;1.0
+76;Square tube - 100 × 100 mm. 4 mm thick;Metals;Steel;m;1.0
+77;Steel pipe - 21.3 mm outer dia.. 2.6 mm thick;Metals;Steel;m;1.0
+78;Steel pipe - 42.4 mm outer dia.. 2.6 mm thick;Metals;Steel;m;1.0
+79;Steel pipe - 88.9 mm outer dia.. 4 mm thick;Metals;Steel;m;1.0
+80;Steel pipe - 165.1 mm outer dia.. 4.9 mm thick;Metals;Steel;m;1.0
+81;Steel sheet corrugated colorbond;Metals;Steel;m²;1.05
+82;Solvent-based paint - per m²;Miscellaneous;Paint;m²;1.05
+83;Wallpaper - per m²;Miscellaneous;Paper;m²;1.0
+84;Water-based paint - per m²;Miscellaneous;Paint;m²;1.05
+85;ABS panel - 2mm;Plastics;Other;m²;1.0
+86;ABS panel - 3mm;Plastics;Other;m²;1.0
+87;ABS pipe - 21.4 mm outer dia.. 2.1 mm thick;Plastics;Other;m;1.0
+88;ABS pipe - 48.3 mm outer dia.. 3.6 mm thick;Plastics;Other;m;1.0
+89;ABS pipe - 168.3 mm outer dia.. 7.7 mm thick;Plastics;Other;m;1.0
+90;ETFE film - 25.4 μm (0.001”);Plastics;Other;m²;1.0
+91;ETFE film - 50.8 μm (0.002”);Plastics;Other;m²;1.0
+92;ETFE film - 127 μm (0.005”);Plastics;Other;m²;1.0
+93;GRP panel - 10 mm;Plastics;Other;m²;1.0
+94;GRP panel - 20 mm;Plastics;Other;m²;1.0
+95;GRP panel - 50 mm;Plastics;Other;m²;1.0
+96;HDPE film - 100 μm;Plastics;High density polyethylene (HDPE);m²;1.0
+97;HDPE film - 200 μm;Plastics;High density polyethylene (HDPE);m²;1.0
+98;HDPE pipe - 32 mm inner dia.. 1.88 mm thickness;Plastics;High density polyethylene (HDPE);m;1.0
+99;HDPE pipe - 63 mm inner dia.. 3.75 mm thickness;Plastics;High density polyethylene (HDPE);m;1.0
+100;HDPE pipe - 125 mm inner dia.. 7.35 mm thickness;Plastics;High density polyethylene (HDPE);m;1.0
+101;HDPE pipe - 250 mm inner dia.. 14.71 mm thickness;Plastics;High density polyethylene (HDPE);m;1.0
+102;HDPE pipe - 500 mm inner dia.. 29.41 mm thickness;Plastics;High density polyethylene (HDPE);m;1.0
+103;HDPE pipe - 800 mm inner dia.. 47.06 mm thickness;Plastics;High density polyethylene (HDPE);m;1.0
+104;LDPE film - 100 μm;Plastics;Low density polyethylene (LDPE);m²;1.0
+105;LDPE film - 200 μm;Plastics;Low density polyethylene (LDPE);m²;1.0
+106;LDPE pipe - 13 mm inner dia.. 3.95 mm thickness;Plastics;Low density polyethylene (LDPE);m;1.0
+107;LDPE pipe - 19 mm inner dia.. 4.4 mm thickness;Plastics;Low density polyethylene (LDPE);m;1.0
+108;LDPE pipe - 25 mm inner dia.. 5.2 mm thickness;Plastics;Low density polyethylene (LDPE);m;1.0
+109;LDPE pipe - 32 mm inner dia.. 6.7 mm thickness;Plastics;Low density polyethylene (LDPE);m;1.0
+110;Linoleum sheet - 2 mm;Plastics;Other;m²;1.0
+111;Linoleum sheet - 2.5 mm;Plastics;Other;m²;1.0
+112;Linoleum sheet - 3.2 mm;Plastics;Other;m²;1.0
+113;Linoleum sheet - 4 mm;Plastics;Other;m²;1.0
+114;Nylon 66 sheet - 1.5 mm;Plastics;Nylon;m²;1.0
+115;Nylon 66 sheet - 3 mm;Plastics;Nylon;m²;1.0
+116;Nylon 66 sheet - 5 mm;Plastics;Nylon;m²;1.0
+117;Polycarbonate roofing sheet - 1 mm;Plastics;Other;m²;1.0
+118;Polycarbonate roofing sheet - 2 mm;Plastics;Other;m²;1.0
+119;Polycarbonate roofing sheet - 3 mm;Plastics;Other;m²;1.0
+120;Polycarbonate roofing sheet - 6 mm;Plastics;Other;m²;1.0
+121;PMMA sheet - 3 mm;Plastics;Other;m²;1.0
+122;PMMA sheet - 4 mm;Plastics;Other;m²;1.0
+123;PMMA sheet - 5 mm;Plastics;Other;m²;1.0
+124;PMMA sheet - 6 mm;Plastics;Other;m²;1.0
+125;PMMA sheet - 8 mm;Plastics;Other;m²;1.0
+126;PMMA sheet - 10 mm;Plastics;Other;m²;1.0
+127;PP sheet - 2 mm;Plastics;Polypropylene;m²;1.0
+128;PP sheet - 3 mm;Plastics;Polypropylene;m²;1.0
+129;PP sheet - 4 mm;Plastics;Polypropylene;m²;1.0
+130;PP sheet - 6 mm;Plastics;Polypropylene;m²;1.0
+131;PP sheet - 10 mm;Plastics;Polypropylene;m²;1.0
+132;PP sheet - 12 mm;Plastics;Polypropylene;m²;1.0
+133;PP sheet - 15 mm;Plastics;Polypropylene;m²;1.0
+134;PU foam underlay - 7 mm. 64 kg/m³;Plastics;Polyurethane;m²;1.0
+135;PU foam underlay - 7 mm. 69 kg/m³;Plastics;Polyurethane;m²;1.0
+136;PU foam underlay - 10 mm. 73 kg/m³;Plastics;Polyurethane;m²;1.0
+137;PU foam underlay - 10 mm. 123 kg/m³;Plastics;Polyurethane;m²;1.1
+138;PVC film - 19 μm;Plastics;Polyvinyl chloride (PVC);m²;1.0
+139;PVC film - 25 μm;Plastics;Polyvinyl chloride (PVC);m²;1.05
+140;uPVC pipe - 21.35 mm outer dia.. 1.8 mm thick;Plastics;Polyvinyl chloride (PVC);m;1.05
+141;uPVC pipe - 60.25 mm outer dia.. 2.6 mm thick;Plastics;Polyvinyl chloride (PVC);m;1.0
+142;uPVC pipe - 114.3 mm outer dia.. 4.85 mm thick;Plastics;Polyvinyl chloride (PVC);m;1.0
+143;uPVC pipe - 225.3 mm outer dia.. 11.1 mm thick;Plastics;Polyvinyl chloride (PVC);m;1.0
+144;CLT - 60 mm;Timber products;Manufactured timber product;m²;1.0
+145;CLT - 105 mm;Timber products;Manufactured timber product;m²;1.0
+146;CLT - 175 mm;Timber products;Manufactured timber product;m²;1.0
+147;Cork slab - 6 mm;Timber products;Cork;m²;1.0
+148;Cork slab - 10 mm;Timber products;Cork;m²;1.0
+149;Cork slab - 12 mm;Timber products;Cork;m²;1.0
+150;Cork slab - 20 mm;Timber products;Cork;m²;1.0
+151;Cork slab - 50 mm;Timber products;Cork;m²;1.0
+152;SIP - 142 mm;Timber products;Manufactured timber product;m²;1.0
+153;SIP - 162 mm;Timber products;Manufactured timber product;m²;1.0
+154;Asphalt Rolled;Other chemicals;Bitumen;m³;1.05
+155;Aluminium Reflective foil;Non ferrous metals;Aluminium;m²;1.1
+156;Aluminium Interior shutters;Non ferrous metals;Aluminium;m²;1.05
+157;Aluminium Gutter;Non ferrous metals;Aluminium;m;1.05
+158;Aluminium Frame;Non ferrous metals;Aluminium;m;1.05
+159;Bitumen Plain;Other chemicals;Bitumen;m³;1.05
+160;Ceramics Clay bricks (110 mm);Minerals;Clay;m²;1.05
+161;Ceramics Tiles;Minerals;Ceramic;m²;1.05
+162;Ceramics Terracotta roof tiles (20 mm);Minerals;Clay;m²;1.1
+163;Concrete 15 MPa;Minerals;Concrete;m³;1.1
+164;Concrete 20 MPa;Minerals;Concrete;m³;1.1
+165;Concrete 25 MPa;Minerals;Concrete;m³;1.1
+166;Concrete 32 MPa;Minerals;Concrete;m³;1.1
+167;Concrete Aerated block (200 mm);Minerals;Concrete;m²;1.05
+168;Concrete Cement (structural);Minerals;Other minerals;t;1.05
+169;Concrete Cement (other);Minerals;Other minerals;t;1.05
+170;Concrete Hollow block (200 mm);Minerals;Concrete;m²;1.05
+171;Concrete Roof tile (20 mm);Minerals;Concrete;m²;1.1
+172;Concrete Mortar;Minerals;Other minerals;m³;1.3
+173;Concrete Precast;Minerals;Concrete;m³;1.01
+174;Carpet Wool;Natural fibres;Wool;m²;1.05
+175;Carpet Nylon;Polymers;Nylon;m²;1.05
+176;Insulation Fibreglass;Minerals;Glass;m³;1.1
+177;Plasterboard (10 mm);Minerals;Plaster;m²;1.05
+178;Plasterboard (13 mm);Minerals;Plaster;m²;1.05
+179;Plastics General (PVC);Polymers;Polyvinyl Chloride;t;1.05
+180;Plastics Polystyrene (structural);Polymers;Polystyrene;m³;1.05
+181;Plastics UPVC pipe (100 mm);Polymers;Polyvinyl Chloride;m;1.05
+182;Plastics UPVC pipe (100 mm slotted);Polymers;Polyvinyl Chloride;m;1.05
+183;Plastics Vinyl flooring (2 mm);Polymers;Other polymers;m²;1.05
+184;Sand and stone Sand;Minerals;Other minerals;m³;1.1
+185;Sand and stone Screenings;Minerals;Other minerals;m³;1.3
+186;Steel Lintel;Ferrous metals;Steel;t;1.02
+187;Steel Stainless;Ferrous metals;Stainless steel (chromium);t;1.05
+188;Steel Steel decking;Ferrous metals;Steel;m²;1.05
+189;Timber Hardwood (structural);Timber;Hardwood;m³;1.05
+190;Timber Hardwood (exterior);Timber;Hardwood;m³;1.05
+191;Timber Softwood (framing);Timber;Softwood;m³;1.02
+192;Timber MDF/particleboard;Timber;Manufactured timber product;m³;1.05
+193;Copper Plain;Non ferrous metals;Copper;t;1.05
+194;Copper Pipe;Non ferrous metals;Copper;m;1.05
+195;Timber Softwood (panels);Timber;Softwood;m³;1.02
+196;Steel Gutter;Ferrous metals;Galvanised steel (zinc coated);t;1.05
+197;Aluminium Door handle;Non ferrous metals;Aluminium;no.;1.05
+198;Steel Door accessories;Ferrous metals;Steel;t;1.05
+199;Ceramics Basin;Minerals;Ceramic;no.;1.03
+200;Timber Squirting (20 x 1.8 cm);Timber;Softwood;m;1.1
+201;Steel Stainless (sink);Ferrous metals;Stainless steel (chromium);no.;1.0
+202;Plastics Bath (Acrylic);Polymers;Other polymers;no.;1.0
+203;Aluminium Solar frame;Non ferrous metals;Aluminium;m;1.05
+204;Insulation Fibreglass (solar);Minerals;Glass;m³;1.03
+205;Steel Tank (solar);Ferrous metals;Galvanised steel (zinc coated);t;1.03
+206;Copper Wire;Non ferrous metals;Copper;t;1.03
+207;Plastics Wire coating;Polymers;Polyvinyl Chloride;t;1.03
+208;Steel Structural;Ferrous metals;Steel;t;1.05
+209;Concrete Hollow block (100 mm);Minerals;Concrete;m²;1.05
+210;Timber Hardwood ( window frame);Timber;Hardwood;m³;1.05
+211;Steel Systems;Ferrous metals;Steel;t;1.03
+212;Plastics Systems (PVC);Polymers;Polyvinyl Chloride;t;1.05
+213;Concrete 5 MPa (for roads);Minerals;Other minerals;m³;1.05
+214;Concrete Sidewalk pavement;Minerals;Concrete;m²;1.05
+215;Concrete 32 MPa (roads);Minerals;Concrete;m³;1.05
+216;Steel Reinforcement (roads);Ferrous metals;Steel;t;1.05
+217;Plastics PVC (water system);Polymers;Polyvinyl Chloride;t;1.05
+218;Steel Infrastructure valves;Ferrous metals;Stainless steel (chromium);t;1.03
+219;Timber MDF/particleboard (structural);Timber;Manufactured timber product;m³;1.05
+220;Aluminium Systems;Non ferrous metals;Aluminium;t;1.01
+221;Timber Hardwood (poles);Timber;Hardwood;m³;1.05
+222;Concrete Hollow block (180 mm);Minerals;Concrete;m²;1.05
+223;Aluminium Exterior shutters;Non ferrous metals;Aluminium;m²;1.05
+224;Aluminium Virgin;Non ferrous metals;Aluminium;t;1.0
+225;Timber MDF/particleboard (sandwich panel);Timber;Manufactured timber product;m³;1.05
+226;Steel Reinforcement (prefabricated);Ferrous metals;Steel;t;1.005
+227;Concrete 25 MPa (low waste);Minerals;Concrete;m³;1.005
+228;Insulation EPS structural block;Polymers;Polystyrene;m³;1.1
+229;Ceramics Clay bricks (100 mm);Minerals;Clay;m²;1.05
+230;Aluminium Handrail;Non ferrous metals;Aluminium;t;1.0
+231;Aluminium Sill;Non ferrous metals;Aluminium;t;1.0
+232;Insulation Cork;Timber;Cork;m³;1.05
+233;Steel handle;Metals;Stainless steel;no.;1.03
+234;Steel pair of hinges;Metals;Stainless steel;no.;1.03
+235;Steel pair of drawer rails;Metals;Galvanised steel (zinc coated);no.;1.03
+236;Granit;Sand, stone and ceramics;Other minerals;m³;1.05
+237;Ceramic toilet bowl;Minerals;Ceramic;no.;1.03
+238;Steel screws;Metals;Steel;kg;1.03
+239;Ceramic shower tray (70 cm x 90 cm);Minerals;Ceramic;no.;1.03
+240;Stainless steel tap, flexible shower hose, head;Metals;Stainless steel (chromium);no.;1.03
+241;Cover frame and central plate ABS;Plastics;Other polymers;no.;1.03
+242;Cover frame and mechanism cover ABS;Plastics;Other polymers;no.;1.03
