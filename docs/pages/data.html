@@ -2,14 +2,15 @@
 layout: default
 ---
 
-<div class="h-100 p-3 text-center">
+<div class="h-100 p-3 text-center d-flex flex-column">
     <h3>Data files (click to download)</h3>
-    <div style="border: 1px solid black; box-shadow: 1px 1px 0 5px gray">
+    <div class="my-auto" style="border: 1px solid black; box-shadow: 1px 1px 5px 0 gray">
+        <a class="btn btn-primary" href="{{site.baseurl}}/code/data" download>Download all files</a>
         <ul>
-            <li><a href="{{site.baseurl}}/../code/data/materials.csv" download="download">materials.csv</a></li>
-            <li><a href="{{site.baseurl}}/../code/data/elements.csv" download="download">elements.csv</a></li>
-            <li><a href="{{site.baseurl}}/../code/data/matelems.csv" download="download">matelems.csv</a></li>
-            <li><a href="{{site.baseurl}}/../code/data/elements_with_bd.csv" download="download">elements_with_bd.csv</a></li>
+            <li><a href="{{site.baseurl}}/code/data/materials.csv" download>materials.csv</a></li>
+            <li><a href="{{site.baseurl}}/code/data/elements.csv" download>elements.csv</a></li>
+            <li><a href="{{site.baseurl}}/code/data/matelems.csv" download>matelems.csv</a></li>
+            <li><a href="{{site.baseurl}}/code/data/elements_with_bd.csv" download>elements_with_bd.csv</a></li>
         </ul>
     </div>
 </div>
