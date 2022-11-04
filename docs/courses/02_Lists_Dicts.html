@@ -1,0 +1,641 @@
+---
+layout: default 
+---
+
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lists-reminder">Lists reminder<a class="anchor-link" href="#Lists-reminder">¶</a></h2><p>In Python, a list is a data type that defines a collection of elements. This collection of elements can be of any type, we could have a list of numbers, a list of strings, a list of objects, a list of lists,...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Empty list</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># List of numbers</span>
+<span class="n">ways_to_greet</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="s2">"Hi"</span><span class="p">,</span> <span class="s2">"Ciao"</span><span class="p">,</span> <span class="s2">"Bonjour"</span><span class="p">,</span> <span class="s2">"Zdravo"</span><span class="p">,</span> <span class="s2">"Salaam"</span><span class="p">,</span> <span class="s2">"Mirëdita"</span><span class="p">]</span> <span class="c1"># List of strings</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can then access items in the list using indexes: each element of the list is linked to an index, starting at 0
+In a list like ["value 1", "value 2", "value 3"] the first element "value 1" is associated to index 0, then index 1 corresponds to "value 2" and so on until the end of the list.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># accessing item 1 of the 'numbers' list (indexes start at 0 so we're getting the 2nd element of the list)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ways_to_greet</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># accessing and printing the 4th element of the 'ways_to_greet' list</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+Bonjour
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, we can iterate through a list like so:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Printing ways to greet</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">greeting</span> <span class="ow">in</span> <span class="n">ways_to_greet</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span> 
+    
+<span class="c1"># OR, using indexes, it could also be written as:</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Printing ways to greet using indexes</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">number_of_items_in_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ways_to_greet</span><span class="p">)</span>  <span class="c1"># we get the number of elements in the list </span>
+<span class="n">list_of_indexes</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_items_in_list</span><span class="p">)</span> <span class="c1"># range(n) creates a list [0, 1, ..., n-1]</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">list_of_indexes</span><span class="p">:</span>
+    <span class="n">greeting</span> <span class="o">=</span> <span class="n">ways_to_greet</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Printing ways to greet
+
+Hello
+Hi
+Ciao
+Bonjour
+Zdravo
+Salaam
+Mirëdita
+
+Printing ways to greet using indexes
+
+Hello
+Hi
+Ciao
+Bonjour
+Zdravo
+Salaam
+Mirëdita
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are several functions/methods that you can use with lists, for example, len(my_list) gives you the number of elements of 'my_list', but there are many more, for example:</p>
+<ul>
+<li>my_list.append('test') : adds the string element 'test' to the end of 'my_list'</li>
+<li>my_list.remove('test') : searches the list for a 'test' element and removes it from the list</li>
+<li>my_list.sort() : sorts the list in increasing order of values</li>
+<li>...</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dictionaries-reminder">Dictionaries reminder<a class="anchor-link" href="#Dictionaries-reminder">¶</a></h2><p>A dictionary is another data type which allows us to store key : value pairs, much like a real dictionary, where the key is a word and the value is a definition, the idea is to be able to access items of a collections like a list using something more meaningful than just a number from 0 to the number of elements.</p>
+<p>Just like lists, the values can be of any data type.
+The keys, however, will usually be strings.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">greeting_by_language</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"English"</span><span class="p">:</span> <span class="s2">"Hello"</span><span class="p">,</span> <span class="s2">"French"</span><span class="p">:</span> <span class="s2">"Bonjour"</span><span class="p">,</span> <span class="s2">"Farsi"</span><span class="p">:</span> <span class="s2">"Salaam"</span><span class="p">,</span> <span class="s2">"Albanian"</span><span class="p">:</span> <span class="s2">"Mirëdita"</span><span class="p">,</span> <span class="s2">"Serbian"</span><span class="p">:</span> <span class="s2">"Zdravo"</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">greeting_by_language</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="c1">#  dict.keys() returns a list of all the keys in the dictionnary</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['English', 'French', 'Farsi', 'Albanian', 'Serbian']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can then access values of the dictionnary using the keys.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">greeting_by_language</span><span class="p">[</span><span class="s2">"Farsi"</span><span class="p">])</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Salaam
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Aim">Aim<a class="anchor-link" href="#Aim">¶</a></h1><p>The goal of this session is to filter some data about building materials based on certain attributes of the material, like for instance, we want to get a list of materials that belong in the "Minerals" category.
+The data with which we are working is in the form of a list of dictionaries. Each item in the list represents a material, and each material is represented as a dictionary with information describing the material.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Importing-data-from-csv-with-pandas">Importing data from csv with pandas<a class="anchor-link" href="#Importing-data-from-csv-with-pandas">¶</a></h2><p>Before the session, I imported some data from a file and turned it into a list of dictionnaries</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../data/materials.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">)</span>
+<span class="n">materials</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"records"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can first check how the data looks</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">materials</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">materials</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">materials</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="c1"># Each material is defined by these keys</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'list'&gt;
+&lt;class 'dict'&gt;
+['id', 'name', 'category', 'type', 'functional_unit', 'description', 'common_uses', 'comments', 'embodied_energy', 'embodied_water', 'embodied_carbon', 'weight']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="First-algorithm">First algorithm<a class="anchor-link" href="#First-algorithm">¶</a></h1><p>Let's first simplify the task to figure out how we could get a list of materials that belong to the category 'Minerals'
+Here is the pseudo-code for what needs to be done:</p>
+<ul>
+<li>Initialize a list</li>
+<li>loop through list_of_dicts<ul>
+<li>check the object's category field</li>
+<li>if the category is "Minerals" =&gt; add it to new_list</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minerals_materials</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s1">'category'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Minerals'</span><span class="p">:</span>
+        <span class="n">minerals_materials</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># OR, the compact and optimized way:</span>
+<span class="n">minerals_materials_fast</span> <span class="o">=</span> <span class="p">[</span><span class="n">material</span> <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span> <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s2">"category"</span><span class="p">]</span><span class="o">==</span><span class="s2">"Minerals"</span><span class="p">]</span>
+<span class="n">minerals_materials_fast</span> <span class="o">==</span> <span class="n">minerals_materials</span>  <span class="c1"># Checking that the two methods lead to the same results</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Generalizing-the-algorithm">Generalizing the algorithm<a class="anchor-link" href="#Generalizing-the-algorithm">¶</a></h2><p>Now, filtering based on the category is a pretty common task, and we might sometimes be interested in getting different categories, like 'Timber' instead of 'Minerals' for instance, to do that, we can build a reusable function taking the category to filter as argument</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">filter_category</span><span class="p">(</span><span class="n">category_to_filter</span><span class="p">):</span>
+    <span class="n">filtered_materials</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s1">'category'</span><span class="p">]</span> <span class="o">==</span> <span class="n">category_to_filter</span><span class="p">:</span>
+            <span class="n">filtered_materials</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">filtered_materials</span>
+
+<span class="c1"># We can then call this function to filter based on any category we want:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_category</span><span class="p">(</span><span class="s1">'Minerals'</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="n">material</span> <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span> <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s2">"category"</span><span class="p">]</span><span class="o">==</span><span class="s2">"Minerals"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_category</span><span class="p">(</span><span class="s1">'Timber'</span><span class="p">)</span>  <span class="o">==</span> <span class="p">[</span><span class="n">material</span> <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span> <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s2">"category"</span><span class="p">]</span><span class="o">==</span><span class="s2">"Timber"</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>True
+True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Further-generalization">Further generalization<a class="anchor-link" href="#Further-generalization">¶</a></h2><p>We could add parameters to our function in order to filter based on other attributes than the category</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">filter_attribute</span><span class="p">(</span><span class="n">attribute_to_filter</span><span class="p">,</span> <span class="n">attribute_value</span><span class="p">):</span>
+    <span class="n">filtered_materials</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="n">attribute_to_filter</span><span class="p">]</span> <span class="o">==</span> <span class="n">attribute_value</span><span class="p">:</span>
+            <span class="n">filtered_materials</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">filtered_materials</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_attribute</span><span class="p">(</span><span class="s1">'category'</span><span class="p">,</span> <span class="s1">'Minerals'</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="n">material</span> <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span> <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s2">"category"</span><span class="p">]</span><span class="o">==</span><span class="s2">"Minerals"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_attribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'Glass'</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="n">material</span> <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span> <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s2">"type"</span><span class="p">]</span><span class="o">==</span><span class="s2">"Glass"</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>True
+True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Comparing-with-pandas">Comparing with pandas<a class="anchor-link" href="#Comparing-with-pandas">¶</a></h2><p>That's it! Now, using pandas to work with tables of data is much more convenient than relying on Python's built in data types (e.g. lists, dictionaries,..) because it provides these kinds of functions and much more, so we could do the same kind of filtering using the following line on a pandas dataframe</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">filtered_materials</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"category"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"Minerals"</span><span class="p">]</span>
+<span class="n">filtered_materials</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>category</th>
+      <th>type</th>
+      <th>functional_unit</th>
+      <th>description</th>
+      <th>common_uses</th>
+      <th>comments</th>
+      <th>embodied_energy</th>
+      <th>embodied_water</th>
+      <th>embodied_carbon</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>20 MPa concrete mix (30% FA)</td>
+      <td>Minerals</td>
+      <td>Concrete</td>
+      <td>m³</td>
+      <td>Concrete is a composite material combining san...</td>
+      <td>Floor slabs. suspended slabs. driveways. preca...</td>
+      <td>NaN</td>
+      <td>2.026212</td>
+      <td>4011.163289</td>
+      <td>250.834220</td>
+      <td>2335.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>20 MPa concrete mix (30% GGBFS)</td>
+      <td>Minerals</td>
+      <td>Concrete</td>
+      <td>m³</td>
+      <td>Concrete is a composite material combining san...</td>
+      <td>Floor slabs. suspended slabs. driveways. preca...</td>
+      <td>NaN</td>
+      <td>2.185683</td>
+      <td>4033.505476</td>
+      <td>263.429388</td>
+      <td>2335.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>20 MPa concrete mix</td>
+      <td>Minerals</td>
+      <td>Concrete</td>
+      <td>m³</td>
+      <td>Concrete is a composite material combining san...</td>
+      <td>Floor slabs. suspended slabs. driveways. preca...</td>
+      <td>NaN</td>
+      <td>2.403695</td>
+      <td>4153.722958</td>
+      <td>328.381715</td>
+      <td>2335.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>25 MPa concrete mix (30% FA)</td>
+      <td>Minerals</td>
+      <td>Concrete</td>
+      <td>m³</td>
+      <td>Concrete is a composite material combining san...</td>
+      <td>Floor slabs. suspended slabs. precast wall panels</td>
+      <td>NaN</td>
+      <td>2.241050</td>
+      <td>4028.347615</td>
+      <td>277.233297</td>
+      <td>2409.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>25 MPa concrete mix (30% GGBFS)</td>
+      <td>Minerals</td>
+      <td>Concrete</td>
+      <td>m³</td>
+      <td>Concrete is a composite material combining san...</td>
+      <td>Floor slabs. suspended slabs. precast wall panels</td>
+      <td>NaN</td>
+      <td>2.441117</td>
+      <td>4104.690027</td>
+      <td>292.537716</td>
+      <td>2409.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
