@@ -1,0 +1,475 @@
+---
+layout: default 
+---
+
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../data/materials.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">)</span>
+<span class="n">materials</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"records"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">¶</a></h3><p>Go through the materials list of dictionaries and print the sum of embodied energies of all materials of the 'Minerals' category</p>
+<h5 id="Reminder:-previous-session's-algorithm">Reminder: previous session's algorithm<a class="anchor-link" href="#Reminder:-previous-session's-algorithm">¶</a></h5><ul>
+<li>Initialize a list (to hold your output)</li>
+<li>loop through materials<ul>
+<li>check the object's category field</li>
+<li>if the category is "Minerals" =&gt; add it to new_list (update the output)</li>
+</ul>
+</li>
+</ul>
+<p>In this case, we're not trying to create a list, our output should instead just be a number equal to the sum of embodied energies of all materials that enter the if statement.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Algorithm-for-summing-on-the-fly">Algorithm for summing on the fly<a class="anchor-link" href="#Algorithm-for-summing-on-the-fly">¶</a></h5><ul>
+<li>Initialize a variable y equal to 0</li>
+<li>loop through materials<ul>
+<li>check the material dictionary's category field</li>
+<li>if the category is 'Minerals'<ul>
+<li>get the materials's embodied energy</li>
+<li>add the embodied energy to y</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## SUMMING ON THE FLY</span>
+<span class="n">output_on_the_fly</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initialize the sum of embodied energies to 0</span>
+<span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span> <span class="c1">#  go through each material</span>
+    <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s1">'category'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Minerals'</span><span class="p">:</span>  <span class="c1"># check the category of each material</span>
+        <span class="n">embodied_energy</span> <span class="o">=</span> <span class="n">material</span><span class="p">[</span><span class="s1">'embodied_energy'</span><span class="p">]</span>  <span class="c1">#  retrieve the material's embodied energy</span>
+        <span class="n">output_on_the_fly</span> <span class="o">+=</span>  <span class="n">embodied_energy</span>  <span class="c1">#  if it's a Mineral, add it's embodied energy coefficient to the sum </span>
+        <span class="c1">#  1st iteration: this expression could look like:  output_on_the_fly = 0 + 3.23</span>
+        <span class="c1">#  2nd iteration: this expression could look like:  output_on_the_fly = 3.23 (previous value) + 2.21</span>
+        <span class="c1">#  ...</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"output_on_the_fly = </span><span class="si">{</span><span class="n">output_on_the_fly</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1">#  Once the loop is finished, we should have added the values of the embodied energy coefficient of all mineral materials</span>
+
+<span class="c1">## OR</span>
+
+<span class="c1">## USING A LIST</span>
+<span class="n">mineral_materials</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># initialize an empty list</span>
+<span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span> <span class="c1">#  go through each material   </span>
+    <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s1">'category'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Minerals'</span><span class="p">:</span>  <span class="c1"># check the category of each material</span>
+        <span class="n">mineral_materials</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="s1">'embodied_energy'</span><span class="p">])</span>  <span class="c1">#  if it's a Mineral, add it's embodied energy coefficient to the list</span>
+<span class="n">output_from_list</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mineral_materials</span><span class="p">)</span> <span class="c1"># Sum all the embodied energy coefficients using builtin function 'sum'</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"output_from_list = </span><span class="si">{</span><span class="n">output_from_list</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>output_on_the_fly = 69.13592424619038
+output_from_list = 69.13592424619038
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">¶</a></h3><p>Stepping it up a little, for this second exercise, we are interested not only in the sum of embodied energy of Minerals, but in the sum of embodied energy of each category:
+Your output should consist in a dictionary looking like this:</p>
+<p>{'Minerals': 13900, 'Timber': 25788, ... }</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="FIRST,-INEFFICIENT-WAY">FIRST, INEFFICIENT WAY<a class="anchor-link" href="#FIRST,-INEFFICIENT-WAY">¶</a></h4><ul>
+<li><p>initialize a dictionary z whose keys will be material categories and values will be 0</p>
+</li>
+<li><p>for each category x in all the existing categories</p>
+<ul>
+<li><em>Run previous algorithm while replacing 'Minerals' with the value of x:</em></li>
+<li>Initialize a variable y equal to 0</li>
+<li>loop through materials<ul>
+<li>check the material dictionary's category field</li>
+<li>if the category is equal to x<ul>
+<li>get the materials's embodied energy</li>
+<li>add the embodied energy to y</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>set the value of the key x of the dictionary z to y -&gt; z[x] = y</li>
+</ul>
+</li>
+</ul>
+<p>this first requires us to have a list of all the existing categories, which we can get this way:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">categories</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="s1">'category'</span><span class="p">]</span> <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">))</span>
+
+<span class="c1">## WHICH IS EQUIVALENT TO:</span>
+
+<span class="n">categories</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># A set is like a list, only it cannot have two elements with the same value.</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span>
+    <span class="n">categories</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">'category'</span><span class="p">])</span>
+<span class="n">categories</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{'Ferrous metals',
+ 'Minerals',
+ 'Natural fibres',
+ 'Non ferrous metals',
+ 'Other chemicals',
+ 'Polymers',
+ 'Timber'}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From that, we can create our initial dictionary 'z' like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_output_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">category</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">}</span>
+
+<span class="c1">## WHICH IS EQUIVALENT TO:</span>
+
+<span class="n">my_output_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+    <span class="n">my_output_dict</span><span class="p">[</span><span class="n">category</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">my_output_dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{'Non ferrous metals': 0,
+ 'Natural fibres': 0,
+ 'Minerals': 0,
+ 'Other chemicals': 0,
+ 'Polymers': 0,
+ 'Ferrous metals': 0,
+ 'Timber': 0}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is then how the first algorithm would look like:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+    <span class="c1">#  1st iteration: category is equal to 'Minerals'</span>
+     <span class="c1">#  If we substitute category for 'Minerals' in the next paragraph , this code is exactly the same as exercise 1</span>
+
+    <span class="n">output_on_the_fly</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">material</span><span class="p">[</span><span class="s1">'category'</span><span class="p">]</span> <span class="o">==</span> <span class="n">category</span><span class="p">:</span>
+            <span class="n">embodied_energy</span> <span class="o">=</span> <span class="n">material</span><span class="p">[</span><span class="s1">'embodied_energy'</span><span class="p">]</span>
+            <span class="n">output_on_the_fly</span> <span class="o">+=</span>  <span class="n">embodied_energy</span>
+
+    <span class="c1"># Each time we do exercise 1's algo for a category, we store the final value in the 'category' key of our dictionary</span>
+    <span class="n">my_output_dict</span><span class="p">[</span><span class="n">category</span><span class="p">]</span> <span class="o">=</span> <span class="n">output_on_the_fly</span>
+
+<span class="n">my_output_dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{'Non ferrous metals': 4.062554805334697,
+ 'Natural fibres': 1.2769074529365696,
+ 'Minerals': 69.13592424619038,
+ 'Other chemicals': 0.34575541662011133,
+ 'Polymers': 17.85852525272205,
+ 'Ferrous metals': 26.138118891679333,
+ 'Timber': 331.9579418760087}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Unfortunately, this is not very efficient, because we are going through the 131 materials again for each different category, so 7*131 iterations. Here is a better way to do it:</p>
+<ul>
+<li>initialize a dictionary z whose keys will be material categories and values will be 0</li>
+<li>loop through materials<ul>
+<li>get the material's category and store it in a variable x</li>
+<li>get the materials's embodied energy y</li>
+<li>add the value of this material's embodied energy to the sum of embodied energies for this material's category
+  -&gt; z[x] += y</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_output_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">category</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span>
+    <span class="n">material_category</span> <span class="o">=</span> <span class="n">material</span><span class="p">[</span><span class="s1">'category'</span><span class="p">]</span>
+    <span class="n">embodied_energy</span> <span class="o">=</span> <span class="n">material</span><span class="p">[</span><span class="s1">'embodied_energy'</span><span class="p">]</span>
+    <span class="n">my_output_dict</span><span class="p">[</span><span class="n">material_category</span><span class="p">]</span> <span class="o">+=</span> <span class="n">embodied_energy</span>
+
+<span class="n">my_output_dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{'Non ferrous metals': 4.062554805334697,
+ 'Natural fibres': 1.2769074529365696,
+ 'Minerals': 69.13592424619038,
+ 'Other chemicals': 0.34575541662011133,
+ 'Polymers': 17.85852525272205,
+ 'Ferrous metals': 26.138118891679333,
+ 'Timber': 331.9579418760087}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Going-further:-How-would-we-do-this-in-pandas?">Going further: How would we do this in pandas?<a class="anchor-link" href="#Going-further:-How-would-we-do-this-in-pandas?">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># exercise 1:</span>
+<span class="n">ex1_output</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"category"</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Minerals'</span><span class="p">][</span><span class="s1">'embodied_energy'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ex1_output</span><span class="p">)</span>
+
+<span class="c1"># which can be decomposed as:</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"category"</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Minerals'</span> <span class="c1">#  create a mask/filter of true/false value identifying which rows are Minerals</span>
+<span class="n">mineral_materials</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>  <span class="c1"># apply mask/filter to get a dataframe with only minerals</span>
+<span class="n">mineral_materials_embodied_energies</span> <span class="o">=</span> <span class="n">mineral_materials</span><span class="p">[</span><span class="s1">'embodied_energy'</span><span class="p">]</span> <span class="c1"># get only the 'embodied energy' column</span>
+<span class="n">ex1_output</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mineral_materials_embodied_energies</span><span class="p">)</span> <span class="c1"># sum all values</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ex1_output</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>69.13592424619038
+69.13592424619038
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># exercise 2:</span>
+<span class="n">ex2_output</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)[</span><span class="s1">'embodied_energy'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ex2_output</span><span class="p">)</span>
+
+<span class="c1"># which can be decomposed as:</span>
+<span class="n">df_by_category</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span> <span class="c1"># group materials by category</span>
+<span class="n">df_by_category_embodied_energies</span> <span class="o">=</span> <span class="n">df_by_category</span><span class="p">[</span><span class="s1">'embodied_energy'</span><span class="p">]</span>  <span class="c1"># only get the 'embodied_energy' column</span>
+<span class="n">summed_embodied_energies_by_group</span> <span class="o">=</span> <span class="n">df_by_category_embodied_energies</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1">#  specify how you should regroup values of the same group</span>
+<span class="n">result_as_dict</span> <span class="o">=</span> <span class="n">summed_embodied_energies_by_group</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="c1"># turn the dataframe into a dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_as_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'Ferrous metals': 26.138118891679333, 'Minerals': 69.13592424619036, 'Natural fibres': 1.2769074529365696, 'Non ferrous metals': 4.062554805334696, 'Other chemicals': 0.34575541662011133, 'Polymers': 17.85852525272205, 'Timber': 331.9579418760087}
+{'Ferrous metals': 26.138118891679333, 'Minerals': 69.13592424619036, 'Natural fibres': 1.2769074529365696, 'Non ferrous metals': 4.062554805334696, 'Other chemicals': 0.34575541662011133, 'Polymers': 17.85852525272205, 'Timber': 331.9579418760087}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div>
+  </div>

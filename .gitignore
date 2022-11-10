@@ -1,4 +1,5 @@
 docs/code/.idea
 docs/code/venv/
+docs/code/src/.ipynb_checkpoint/
 
 docs/_site
