@@ -1,0 +1,735 @@
+---
+layout: default 
+---
+
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-structures">Data structures<a class="anchor-link" href="#Data-structures">¶</a></h2><p>Depending on the task we need to do, a different data structure is optimal for the job,.. they all have pros and cons and fit particular situations better than others
+We saw:</p>
+<ul>
+<li>Lists, the basic one, simply holds an ordered collection of stuff</li>
+<li>Sets, holds an unordered collection of unique items</li>
+<li>Dictionaries, match keys (usually words or text) with items.</li>
+</ul>
+<p>Each comes with a set of handy functionalities, methods and functions that you can apply on them,..</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In Python, all these data structures are actually Classes. And we can define new classes to have new data structures that provide us with very specific features/methods,
+useful for working in our particular use cases.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># When we create a new list, we actually create an instance of a class =&gt; we create a 'list' object.</span>
+<span class="n">l1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># We can then call instance methods on that objects, like 'append()' or '__str__()'</span>
+<span class="n">l1</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'[1, 2, 3]'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Reimplementation of the 'list' class</span>
+<span class="k">class</span> <span class="nc">MyList</span><span class="p">:</span>
+    <span class="c1">#  All 'instance methods', i.e. functions that will be specific to each object's state, must be defined with 'self' as the first argument, which is the way to refer to the object's state</span>
+    <span class="c1">#  The __init__ method is a special method (magic method), that is called implicitely when we create a new object/instance of the class. </span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">initial_list</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">inner_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">inner_list</span> <span class="o">=</span> <span class="n">initial_list</span>
+
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inner_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_list</span>
+
+<span class="n">l2</span> <span class="o">=</span> <span class="n">MyList</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">l2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">l2</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+<span class="n">l2</span><span class="o">.</span><span class="n">inner_list</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Vocabulary">Vocabulary<a class="anchor-link" href="#Vocabulary">¶</a></h3><p>ex:</p>
+<pre><code>dict_1 = {"hey": "hoo"}
+dict_2 = {"mykey": 56}
+</code></pre>
+<p>dict_1 and dict_2 are both <strong>instances</strong> of the <strong>Dictionary class</strong>, they're both objects. The <strong>Dictionary class</strong> simply defines that all dictionaries are made of keys (like "hey" in dict_1 and "mykey" in dict_2) and values ("hoo", 56,..). Then, the <strong>dictionary instances</strong> dict_1 and dict_2 have different keys and values.</p>
+<ul>
+<li>Object: an instance of a class</li>
+<li>Class: a mould or factory, this is the abstract, parametric definition of what our objects should look like, for instance in Dictionaries, the class enforces that all dictionaries are represented by keys and values. Classes consist in a set of attributes, that will later hold the 'state' of the objects, and a set of methods, allowing users to interact with the object's state.</li>
+<li>state: the state of an object is the set of values of its attributes. (see example below)</li>
+<li>attributes: variables that are defined on an object. The class defines the names of these variables and then different values are set by each new instance of the class.</li>
+<li>method: a python function, defined inside the definition of a class and enabling to output/modify/set,.. the state of the class's objects when called. The methods of a class define how you should interact with objects of that class. For instance, the List class defines that you should use the append() method to add items to the end of the list.</li>
+<li>magic methods: a bunch of methods called implicitly by Python in common contexts. Magic methods always start and end with __: like __init__, __add__, __repr__...
+  For instance, in Python, since everything is an object, when we write <code>3 + 4</code>, this is what happens: <code>int(3).__add__(int(4))</code> -&gt;<ol>
+<li>We create an instance of the 'int' class with value 3</li>
+<li>We create an instance of the 'int' class with value 4</li>
+<li>We call the magic __add__ method on the first int object with the second int object as argument.</li>
+</ol>
+</li>
+<li>constructor (__init__() ) : a magic method called automatically whenever we create a new object of a class -&gt; it is used to initialise the object, by setting some values to its attributes.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  Example illustrating the notion of state, here the state of any Water object is simply defined by the 'state' attribute, </span>
+<span class="c1">#  programming languages extend that notion of 'state' to be all the variables that describe how a particular element is right now.</span>
+
+<span class="c1">#  So in programming language vocabulary: The state of a Water object is defined by one attribute/property called 'state'.</span>
+
+
+<span class="k">class</span> <span class="nc">Water</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You just created a new water object!"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"liquid"</span>
+
+    <span class="k">def</span> <span class="nf">heat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"heating..."</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">"solid"</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"liquid"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"gas"</span>
+
+    <span class="k">def</span> <span class="nf">cool</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"cooling..."</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">"gas"</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"liquid"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"solid"</span>
+
+<span class="n">my_water</span> <span class="o">=</span> <span class="n">Water</span><span class="p">()</span> <span class="c1">#  We create a new instance of the class 'Water', this line of code calls the constructor '__init__' method of the Water class, which initializes the state of water to 'liquid'</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The state of my water is "</span> <span class="o">+</span> <span class="n">my_water</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>  <span class="c1">#  We can access the attribute of the water object to check which state the water is in.</span>
+<span class="n">my_water</span><span class="o">.</span><span class="n">heat</span><span class="p">()</span>  <span class="c1">#  We can call a method on our water instance to modify its state.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The state of my water is now "</span> <span class="o">+</span> <span class="n">my_water</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+<span class="n">my_water</span><span class="o">.</span><span class="n">cool</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The state of my water is now "</span> <span class="o">+</span> <span class="n">my_water</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+<span class="n">my_water</span><span class="o">.</span><span class="n">cool</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The state of my water is now "</span> <span class="o">+</span> <span class="n">my_water</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>You just created a new water object!
+The state of my water is liquid
+heating...
+The state of my water is now gas
+cooling...
+The state of my water is now liquid
+cooling...
+The state of my water is now solid
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Mould-metaphor">The Mould metaphor<a class="anchor-link" href="#The-Mould-metaphor">¶</a></h2><p>Conceptually, classes are like moulds, they just define a 'shape' of how the cake should look, and then cakes made out of that mould are objects/instances.</p>
+<p>The conceptual shape of the cake, defined by the class, is a parametrized definition of a concept: the class defines that a cake is represented by a list of ingredients and a quantity of sugar without injecting any values in these attributes yet. Then, using this definition, we can describe/represent many different cakes as objects of the class by associating values with these attributes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">CakeMould</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ingredients</span><span class="p">,</span> <span class="n">sugar_quantity</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ingredients</span> <span class="o">=</span> <span class="n">ingredients</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sugar</span> <span class="o">=</span> <span class="n">sugar_quantity</span>
+
+    <span class="k">def</span> <span class="nf">get_sugar_weight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"This cake has </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sugar</span><span class="si">}</span><span class="s2"> g of sugar"</span>
+
+<span class="n">my_first_cake</span> <span class="o">=</span> <span class="n">CakeMould</span><span class="p">([</span><span class="s2">"flour"</span><span class="p">,</span> <span class="s2">"sugar"</span><span class="p">],</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">my_second_cake</span> <span class="o">=</span> <span class="n">CakeMould</span><span class="p">([</span><span class="s2">"strawberries"</span><span class="p">,</span> <span class="s2">"chocolate"</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">,</span> <span class="s2">"sugar"</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_first_cake</span><span class="o">.</span><span class="n">ingredients</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_second_cake</span><span class="o">.</span><span class="n">ingredients</span><span class="p">)</span>
+
+<span class="nb">dir</span><span class="p">(</span><span class="n">CakeMould</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_second_cake</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['flour', 'sugar']
+['strawberries', 'chocolate', 'eggs', 'sugar']
+&lt;__main__.CakeMould object at 0x000001FA1C79CFA0&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  Example showing inheritance: FlourAndSugarBasedCakeMould inherits from CakeMould (it has the same attributes and methods) and overrides the __init__ method</span>
+<span class="k">class</span> <span class="nc">FlourAndSugarBasedCakeMould</span><span class="p">(</span><span class="n">CakeMould</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ingredients</span><span class="p">,</span> <span class="n">sugar_quantity</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">ingredients</span><span class="p">,</span> <span class="n">sugar_quantity</span><span class="p">)</span>  <span class="c1">#  Here, we call the parent class' __init__ method, that is: we first initialize the object as we did for the previous class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ingredients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"flour"</span><span class="p">)</span>  <span class="c1">#  Then, we do extra stuff that we didn't do in the CakeMould class. </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ingredients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"sugar"</span><span class="p">)</span>
+
+<span class="n">my_first_flour_and_sugar_based_cake</span> <span class="o">=</span> <span class="n">FlourAndSugarBasedCakeMould</span><span class="p">([</span><span class="s2">"eggs"</span><span class="p">],</span> <span class="mi">300</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_first_flour_and_sugar_based_cake</span><span class="o">.</span><span class="n">ingredients</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['eggs', 'flour', 'sugar']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So inheritance is a very powerful tool that allows us to reuse a lot of code and avoid duplicating lines of code.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise:-define-the-Material-class">Exercise: define the Material class<a class="anchor-link" href="#Exercise:-define-the-Material-class">¶</a></h2><p>So far, we represented Materials as dictionaries, like:</p>
+<pre><code>{'id': 1,
+ 'name': '20 MPa concrete mix (30% FA)',
+ 'category': 'Minerals',
+ 'type': 'Concrete',
+ 'functional_unit': 'm³',
+ 'description': 'Concrete is a composite material combining sand or other fine aggregates. coarse aggregates. a binder and water. Portland cement is the most commonly used binder. however other binders. such as polymers. may also be used. Supplementary Cementitious Materials (SCM) such as Fly Ash and Ground. Granulated Blast Furnace Slag (GGBFS). are also commonly used as a part replacement for Portland cement. Additives. such as...',
+ 'common_uses': 'Floor slabs. suspended slabs. driveways. precast wall panels',
+ 'comments': nan,
+ 'embodied_energy': 2.026212111640545,
+ 'embodied_water': 4011.163289376414,
+ 'embodied_carbon': 250.8342200202523,
+ 'weight': 2335.0}
+</code></pre>
+<p>This is very permissive, because it allows to add any key, like a key called 'Arta' to the dictionary describing a Material, which doesn't make much sense.
+It also allows defining a material without providing a name,... since all the Dictionary class enforces is just that we have keys and values.
+In this case, it could be useful to find a more systematic way to represent Materials, by creating a class whose objects will represent materials.
+That way, we can enforce that all Materials are described exactly by these attributes:</p>
+<pre><code>['id', 'name', 'category', 'type', 'functional_unit', 'description', 'common_uses', 'comments', 'embodied_energy', 'embodied_water', 'embodied_carbon', 'weight']
+</code></pre>
+<p>We could then define a first method on Materials that combines some of these attributes to create a unique identifier for materials.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># SOLUTION</span>
+<span class="k">class</span> <span class="nc">Material</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">functional_unit</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">common_uses</span><span class="p">,</span> <span class="n">comments</span><span class="p">,</span> <span class="n">embodied_energy</span><span class="p">,</span> <span class="n">embodied_water</span><span class="p">,</span> <span class="n">embodied_carbon</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">category</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">functional_unit</span> <span class="o">=</span> <span class="n">functional_unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">common_uses</span> <span class="o">=</span> <span class="n">common_uses</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="n">comments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embodied_energy</span> <span class="o">=</span> <span class="n">embodied_energy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embodied_water</span> <span class="o">=</span> <span class="n">embodied_water</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embodied_carbon</span> <span class="o">=</span> <span class="n">embodied_carbon</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#  The __repr__ method is called implicetly when we do 'print(object)', so it should return a way to represent the object based on its attributes' values</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">)Material|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">functional_unit</span><span class="si">}</span><span class="s2">"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Useful-helpers-when-the-number-of-function-arguments-gets-intense">Useful helpers when the number of function arguments gets intense<a class="anchor-link" href="#Useful-helpers-when-the-number-of-function-arguments-gets-intense">¶</a></h3><h4 id="Variable-number-of-arguments">Variable number of arguments<a class="anchor-link" href="#Variable-number-of-arguments">¶</a></h4><p>When we have as many arguments as the __init__ function above, it can get hard to keep track of all of them,
+so python function can be defined to accept a variable number of arguments, using the * notation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">function_with_random_number_of_arguments</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">):</span>
+    <span class="c1">#  Inside the body of the function 'arguments' is then considered as a list. </span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arguments</span><span class="p">))</span>
+
+<span class="n">function_with_random_number_of_arguments</span><span class="p">()</span>  <span class="c1"># calling the function without any arguments</span>
+<span class="n">function_with_random_number_of_arguments</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#  calling the function with 1 argument, which is the number 0</span>
+<span class="n">function_with_random_number_of_arguments</span><span class="p">(</span><span class="s2">"hey"</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># calling the function with 3 arguments, namely a string, a number, and a list. </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>the * notation also has another meaning when used in the function call, it can destructure a list, that is, if I call <code>my_function(*my_list)</code> , all the items of my_list will be extracted and fed to my_function as arguments.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_arguments</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"hey"</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>  <span class="c1"># we put our arguments in a list</span>
+<span class="n">function_with_random_number_of_arguments</span><span class="p">(</span><span class="o">*</span><span class="n">my_arguments</span><span class="p">)</span> <span class="c1"># we destructure the list to feed its items as arguments </span>
+<span class="c1">#  so here, we have 3 arguments, this is equivalent to the last line of the last code cell</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Named-arguments">Named arguments<a class="anchor-link" href="#Named-arguments">¶</a></h4><p>By default, when we call a function, the order in which we specify values for arguments is important, because that is how the mapping is done in the body of the function:
+for instance:</p>
+<pre><code>def minus(value1, value2):
+    return value1 - value2
+</code></pre>
+<p>calling <code>minus(3, 4)</code> or <code>minus(4, 3)</code> is very different! In the first case, we map the value '3' with the variable called 'value1' and the value '4' with the variable called 'value2' and in the second case it's the opposite. Although this might seem okay for such a small example where we have 2 arguments, it can be harder to keep track of the expected order of arguments when we have more of them.
+To clarify this, a Python function can be called while explicitely naming each argument, like:
+<code>minus(value1=3, value2=4)</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value1</span> <span class="o">-</span> <span class="n">value2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">value1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">value2</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span> <span class="c1">#  Less ambiguity</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-1
+1
+-1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Putting-it-all-together:variable-number-of-named-arguments">Putting it all together:variable number of named arguments<a class="anchor-link" href="#Putting-it-all-together:variable-number-of-named-arguments">¶</a></h3><p>combining the idea of named arguments and variable number of arguments, we can write a function that accepts a variable number of named arguments with the double ** notation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">function_with_random_number_of_named_arguments</span><span class="p">(</span><span class="o">**</span><span class="n">named_arguments</span><span class="p">):</span>
+    <span class="c1">#  Inside the body of the function 'named_arguments' is then considered as a dict. </span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">named_arguments</span><span class="p">)</span>
+
+<span class="n">function_with_random_number_of_named_arguments</span><span class="p">(</span><span class="n">first</span><span class="o">=</span><span class="s2">"hey"</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">random_name</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'first': 'hey', 'second': 34, 'random_name': [1, 2, 3]}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly to the variable number of arguments * notation, we can also use the ** notation when calling a function to feed named argument to a function from a dictionary:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_named_arguments</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"first"</span><span class="p">:</span><span class="s2">"hey"</span><span class="p">,</span> <span class="s2">"second"</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span> <span class="s2">"random_name"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
+<span class="n">function_with_random_number_of_named_arguments</span><span class="p">(</span><span class="o">**</span><span class="n">my_named_arguments</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'first': 'hey', 'second': 34, 'random_name': [1, 2, 3]}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using all these tricks, we could rewrite the Material class in a simpler way:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Material</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">keyword_arguments</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">argument_name</span><span class="p">,</span> <span class="n">argument_value</span> <span class="ow">in</span> <span class="n">keyword_arguments</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argument_name</span><span class="p">,</span> <span class="n">argument_value</span><span class="p">)</span> <span class="c1"># setattr takes 3 parameters: an object, an attribute name and an attribute value and runs: object.&lt;attribute name&gt; = &lt;attribute value&gt;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">)Material|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">functional_unit</span><span class="si">}</span><span class="s2">"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But now we went full circle, because we're just allowing people to define Materials with any named arguments we pass it, so to enforce that the attribute names are authorized, we could add:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Material</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">keyword_arguments</span><span class="p">):</span>
+        <span class="n">allowed_attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">,</span> <span class="s1">'category'</span><span class="p">,</span> <span class="s1">'type'</span><span class="p">,</span> <span class="s1">'functional_unit'</span><span class="p">,</span> <span class="s1">'description'</span><span class="p">,</span> <span class="s1">'common_uses'</span><span class="p">,</span>
+                         <span class="s1">'comments'</span><span class="p">,</span> <span class="s1">'embodied_energy'</span><span class="p">,</span> <span class="s1">'embodied_water'</span><span class="p">,</span> <span class="s1">'embodied_carbon'</span><span class="p">,</span> <span class="s1">'weight'</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">argument_name</span><span class="p">,</span> <span class="n">argument_value</span> <span class="ow">in</span> <span class="n">keyword_arguments</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">argument_name</span> <span class="ow">in</span> <span class="n">allowed_attrs</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argument_name</span><span class="p">,</span> <span class="n">argument_value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">)Material|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">functional_unit</span><span class="si">}</span><span class="s2">"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  We can also use the ** notation to easily convert our list of material dictionaries into a list of Material objects, like so:</span>
+
+<span class="c1">## READING THE DATA</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df_mats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../data/materials.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">)</span>
+<span class="n">materials</span> <span class="o">=</span> <span class="n">df_mats</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"records"</span><span class="p">)</span>
+
+<span class="n">material_objects</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span><span class="p">:</span>
+    <span class="n">material_object</span> <span class="o">=</span> <span class="n">Material</span><span class="p">(</span><span class="o">**</span><span class="n">material</span><span class="p">)</span> <span class="c1">#  we destructure the material dictionary and pass its content as arguments to the Material class constructor</span>
+    <span class="n">material_objects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material_object</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">material_objects</span><span class="p">[</span><span class="mi">34</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="c1">#  We can access attributes of any of the objects</span>
+<span class="n">material_objects</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># Or just output the whole list, where each Material object will be represented using our very own __repr__ method! </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Cement mortar
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[(1)Material|20 MPa concrete mix (30% FA)|Minerals|Concrete|m³,
+ (2)Material|20 MPa concrete mix (30% GGBFS)|Minerals|Concrete|m³,
+ (3)Material|20 MPa concrete mix|Minerals|Concrete|m³,
+ (4)Material|25 MPa concrete mix (30% FA)|Minerals|Concrete|m³,
+ (5)Material|25 MPa concrete mix (30% GGBFS)|Minerals|Concrete|m³]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Writing-conventions:">Writing conventions:<a class="anchor-link" href="#Writing-conventions:">¶</a></h3><p>Although you are free to name your functions, variables, methods and classes however you like, there are a couple of good practices/conventions that are usually respected.
+These writing conventions sometimes differ from one programming language to another, but here are the common rules for Python:</p>
+<ul>
+<li>class names should be written in PascalCase, with the first letter in caps, all words attached and each first letter of each word in caps</li>
+<li>variables, functions, methods should be written in snake_case, without any caps, and with words separated by _</li>
+</ul>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
